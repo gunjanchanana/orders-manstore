@@ -1,0 +1,30 @@
+[
+    {
+      "label": "Order Id",
+      "key": "orderId"
+    },
+    {
+        "label": "Customer",
+        "key": "customerName"
+    },
+    {
+        "label": "Product",
+        "key": "product"
+    },
+    {
+        "label": "Date",
+        "key": "date"
+    },
+    {
+        "label": "Distribution",
+        "key": "distribution"
+    },
+    {
+        "label": "Status",
+        "key": "status"
+    },
+    {
+        "label": "Price",
+        "key": "price"
+    }
+  ]

@@ -1,0 +1,31 @@
+<div class="cst-search-bar">
+    <div class="cst-search-components">
+        <div class="input-group cst-search">
+            <span class="input-group-addon cst-search-icon-container" id="sizing-addon1">
+                <span class="glyphicon glyphicon-search cst-search-icon"></span>
+            </span>
+            <input type="text" class="form-control cst-search-box" placeholder="Search for any parameter"
+                aria-describedby="sizing-addon1" [(ngModel)]="searchVal" (keyup)="evtKeyupSearch()">
+        </div>
+
+        <div class="cst-dropdown">
+            <span class="fa fa-tag cst-dropdown-icon"></span>
+            <select class="form-control cst-select-dropdown" [(ngModel)]="statusVal" (change)="evtStatusChanged()">
+                <option *ngFor="let statusVal of statusArr" [(value)]="statusVal.value">{{statusVal.label}}</option>
+            </select>
+        </div>
+
+        <div class="cst-dropdown">
+            <span class="fa fa-map-marker cst-dropdown-icon"></span>
+            <select class="form-control cst-select-dropdown" [(ngModel)]="distributionVal"
+                (change)="evtDistributionChanged()">
+                <option *ngFor="let distributionVal of distributionArr" [(value)]="distributionVal.value">{{distributionVal.label}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="cst-export-button-container" (click)=evtClickExport()>
+        <button type="button" class="btn btn-default cst-export-button">
+            <span class="fa fa-download cst-export-button-icon"></span> Export Order(s)
+        </button>
+    </div>
+</div>

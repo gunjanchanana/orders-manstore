@@ -1,0 +1,58 @@
+<div class="cst-order-details-container">
+    <div class="cst-order-header">
+        <div class="cst-checkbox-icon-container" (click) = "evtClickSelectAll()">
+            <div class="cst-checkbox-icon" *ngIf=!allSelected>
+                <span class="fa fa-square-o"></span>
+            </div>
+            <div class="cst-checkbox-icon" *ngIf=allSelected>
+                <span class="fa fa-check-square-o"></span>
+            </div>
+        </div>
+        <span class="cst-order-heading-1">All Orders</span>
+        <span class="cst-order-heading-2">({{selectedOrders.length}} Orders Selected)</span>
+    </div>
+    <div class="cst-order-table">
+        <div class="cst-table-header">
+            <div class="cst-checkbox-col">
+
+            </div>
+            <div class="cst-table-heading" *ngFor="let headerObj of headers">
+                {{headerObj.label}}
+            </div>
+        </div>
+        <div class="cst-table-row" *ngFor="let orderObj of orders | filter:searchKeyWord; let index=index;"
+            [ngClass]="{'cst-table-even': 0 !== index%2}">
+            <div class="cst-checkbox-col">
+                <div class="cst-checkbox-icon-container" (click) = evtClickSelectOrder(orderObj)>
+                    <div class="cst-checkbox-icon" *ngIf=!orderObj.isSelected>
+                        <span class="fa fa-square-o"></span>
+                    </div>
+                    <div class="cst-checkbox-icon" *ngIf=orderObj.isSelected>
+                        <span class="fa fa-check-square-o"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="cst-table-col">
+                {{orderObj.orderId}}
+            </div>
+            <div class="cst-table-col">
+                {{orderObj.customerName}}
+            </div>
+            <div class="cst-table-col">
+                {{orderObj.product}}
+            </div>
+            <div class="cst-table-col">
+                {{orderObj.date}}
+            </div>
+            <div class="cst-table-col">
+                {{orderObj.distribution}}
+            </div>
+            <div class="cst-table-col">
+                {{orderObj.status}}
+            </div>
+            <div class="cst-table-col">
+                {{orderObj.price}}
+            </div>
+        </div>
+    </div>
+</div>
